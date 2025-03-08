@@ -2,13 +2,203 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BioFlock - Sign Up</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+
+        .navbar a.active {
+            font-weight: bold;
+        }
+
+        /* Sign-Up Section */
+        .form-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            padding: 50px;
+            position: relative;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+            border-radius: 10px;
+            max-width: 900px;
+        }
+
+        .form-content {
+            max-width: 450px;
+        }
+
+        .form-image {
+            max-width: 50%;
+            margin-left: 40px;
+        }
+
+        .info-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-group input {
+            flex: 1;
+        }
+
+        .info-form input {
+            margin-bottom: 15px;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            background: white;
+            color: #333;
+        }
+
+        .info-form button {
+            padding: 14px;
+            font-size: 18px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .info-form button:hover {
+            background-color: #777;
+        }
+
+        /* Heading and Terms in One Line */
+        .heading-container {
+            display: flex;
+            align-items: center;
+            gap: 30px; /* Increased space between elements */
+        }
+
+        .terms-text {
+            font-size: 14px;
+            color: #666;
+            max-width: 400px;
+        }
+
+        .terms-text b {
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        /* Dotted Line for Separation */
+        .separator {
+            border-bottom: 1px dashed #aaa;
+            margin: 15px 0;
+        }
+
+        /* Already a Member */
+        .member-question {
+            font-size: 18px;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            right: 30px;
+        }
+
+        .member-question a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .member-question a:hover {
+            text-decoration: underline;
+        }
+
+        /* Required Field Asterisk */
+        .required {
+            color: red;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-section {
+                flex-direction: column;
+                text-align: center;
+                max-width: 100%;
+                padding: 30px;
+            }
+
+            .form-image {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+
+            .member-question {
+                position: static;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .heading-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .terms-text {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <header class="navbar">
-        <h1 class="logo">BioFlock</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="dashboard.html">Dashboard</a>
@@ -17,18 +207,52 @@
         </nav>
     </header>
 
+    <!-- Sign-Up Section -->
     <section class="form-section">
-        <h2>Input Your Information</h2>
-        <form class="info-form">
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
-            <input type="text" placeholder="Company" required>
-            <input type="email" placeholder="Work Email" required>
-            <input type="tel" placeholder="Phone Number (Optional)">
-            <button type="submit" class="btn-primary">Next</button>
-        </form>
+        <p class="member-question">Already a member? <a href="login.html">Login</a></p>
+        
+        <div class="form-content">
+            <!-- Heading & Terms in One Line -->
+            <div class="heading-container">
+                <h2>Input Your Information</h2>
+                <p class="terms-text">
+                    We need you to help us with some basic information for your account creation. 
+                    Here are our <b>terms and conditions</b>. Please read them carefully.
+                </p>
+            </div>
+
+            <!-- Dotted Line Separator -->
+            <div class="separator"></div>
+            
+            <form class="info-form">
+                <!-- First Line: First Name & Last Name -->
+                <div class="input-group">
+                    <input type="text" placeholder="First Name *" required>
+                    <input type="text" placeholder="Last Name *" required>
+                </div>
+
+                <!-- Second Line: Company & Work Email -->
+                <div class="input-group">
+                    <input type="text" placeholder="Company Name *" required>
+                    <input type="email" placeholder="Work Email *" required>
+                </div>
+
+                <!-- Third Line: Phone Number -->
+                <input type="tel" placeholder="Phone Number (Optional)">
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-primary">Next</button>
+            </form>
+        </div>
+
+        <!-- Signup Image -->
+        <a href="https://ibb.co/1fp4gyx0">
+            <img src="https://i.ibb.co/hRnT6Qvg/Screenshot-2025-03-08-160740.png" 
+                 alt="Signup Form Image" border="0" class="form-image">
+        </a>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <p>BioFlock © 2025 | <a href="contact.html">Contact Us</a></p>
     </footer>
